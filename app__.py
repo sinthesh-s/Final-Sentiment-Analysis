@@ -1,10 +1,13 @@
-
 import streamlit as st
-import joblib
+import numpy as np
+from keras.models import load_model
+from keras.preprocessing.sequence import pad_sequences
+import pickle
 
-# Load the model and vectorizer
-model = joblib.load('/content/lstm_sentiment_model (1).keras')
-vectorizer = joblib.load('/content/tokenizer.pkl')
+# Load model and tokenizer
+model = load_model("lstm_sentiment_model__.keras")  # ✅ Correct way
+with open("tokenizer__.pkl", "rb") as f:
+    tokenizer = pickle.load(f)
 
 st.title('Movie Review Sentiment Analysis')
 review = st.text_area('Enter a movie review:')
