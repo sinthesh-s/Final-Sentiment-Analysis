@@ -1,8 +1,4 @@
 streamlit
-gdown
-joblib
-scikit-learn
-transformers
-torch
 tensorflow
 numpy
+scikit-learn
